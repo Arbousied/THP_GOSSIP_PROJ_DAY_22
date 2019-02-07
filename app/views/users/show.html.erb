@@ -1,0 +1,19 @@
+
+<div class="card border-info">
+  <div class="card-header">
+    <h1><u><%= @user.first_name + " " + @user.last_name  %></u></h1>
+  </div>
+  <div class="card-body text-info">
+    <ul class="card-text">
+      <li>Prénom : <%= @user.first_name %></li>
+      <li>Nom : <%= @user.last_name %></li>
+      <li>Email : <%= @user.email %></li>
+      <li>Bio : <%= @user.description %></li>
+      <li>Âge : <%= @user.age %></li>
+      <li><%= link_to "Ville :", city_path(@user.city_id) %> <%= @user.city.name %></li>
+    </ul>
+  </div>
+  <div class="card-footer"><h2><u>Potins:</u></h2><% @user.gossips.each do |i| %>
+  <blockquote class="blockquote font-italic">"<%= i.content %>"</blockquote>
+  <%end%></div>
+</div>

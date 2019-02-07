@@ -1,0 +1,22 @@
+
+<div class="card">
+  <div class="card-header">
+    <h1><u>Gossip # <%= params[:id] %></u></h1>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Titre : <%= @gossip.title %></h5>
+    <h5 class="card-text">Gossip : "<%= @gossip.content %>"</h5>
+    <h5>Date de création : <%= @gossip.created_at %></h5>
+    <%= link_to "Editer le Potin", edit_gossip_path(params[:id])%>
+    <a href="<%gossip_path(@gossip.id)%>" class="btn btn-danger" data-confirm="êtes-vous sur ?" data-method="DELETE">Supprimer</a>
+  </div>
+</div>
+<div class="card">
+  <div class="card-header">
+    <h1><u><%= @gossip.user.first_name %></u></h1>
+  </div>
+  <div class="card-body">
+      <h5><%= link_to "Ville :", city_path(@gossip.user.city_id) %> <%= @gossip.user.city.name %></h5>
+    <%= link_to "Page Auteur", user_path(@gossip.user.id), :class => "btn-info btn" %>
+  </div>
+</div>

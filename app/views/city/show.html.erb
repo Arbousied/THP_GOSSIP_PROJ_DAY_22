@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-header">
+    <h1><u>Ville # <%= params[:id] %></u></h1>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Nom : <%= @city.name %></h5>
+  </div>
+<div class="card-footer"><h2><u>Potins:</u></h2><% @goss.each do |gossip| %>
+<blockquote class="blockquote font-italic">"<%= gossip.content %>"</blockquote>
+<%end%></div>
+</div>

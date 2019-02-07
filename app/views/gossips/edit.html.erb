@@ -1,0 +1,54 @@
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">title</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="card border-info m-5">
+       <div class="card-header"><h1><i class="fas fa-edit"></i> Édite le potin n° <%= params[:id] %></h1></div>
+
+        <%= form_tag url_for(action: 'update'), method: "patch" do %>
+
+            <div class="card-body text-info">
+              <div class="form-group">
+                <%= label_tag 'Titre'%>
+                <%= text_field_tag :title, @gossip.title, class:'form-control', placeholder: @gossip.title %>
+                <br /> <br />
+
+                <%= label_tag 'Contenu du potin' %>
+                <%= text_area_tag :content, @gossip.content, class:'form-control', placeholder: @gossip.content %>
+                <br /> <br />
+
+                <%= submit_tag "Éditer le potin", class: "btn btn-info" %>
+              <% end %>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
